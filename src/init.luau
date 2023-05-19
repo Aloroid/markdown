@@ -1185,7 +1185,14 @@ type OrderedListNode = {
 	value: { ListItemNode },
 } & BaseNode
 
-type Node = OrderedListNode | UnorderedListNode | BlockquoteNode | ParagraphNode | ListItemNode | HeaderNode | CodeNode
+export type Node =
+	OrderedListNode
+	| UnorderedListNode
+	| BlockquoteNode
+	| ParagraphNode
+	| ListItemNode
+	| HeaderNode
+	| CodeNode
 
 return function(text: string): ({ Node }, string)
 	local markdown = markdown(text)

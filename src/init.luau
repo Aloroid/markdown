@@ -1133,7 +1133,9 @@ type BaseNode = {
 	tag: string,
 	begin: number,
 
-	value: { BaseNode } | string,
+	parent: Node,
+
+	value: { Node } | string,
 }
 
 type HeaderNode = {
@@ -1167,6 +1169,8 @@ type CodeNode = {
 type ListItemNode = {
 	name: "listitem",
 	tag: "li",
+
+	parent: UnorderedListNode | OrderedListNode,
 
 	value: { ParagraphNode },
 } & BaseNode
